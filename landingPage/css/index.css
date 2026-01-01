@@ -1080,7 +1080,7 @@ h2 {
 
   .vs-divider {
     margin-top: 0;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
   }
 
   .steps-grid {
