@@ -20,19 +20,24 @@
                 <img src="assets/LeadCRM-removebg-preview-1.webp" alt="LeadCRM Logo" class="logo-img" />
             </div>
 
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <nav class="nav">
                 <a href="#product">Product <span class="dropdown">˅</span></a>
                 <a href="#pricing">Pricing <span class="dropdown">˅</span></a>
                 <a href="#resources">Resources <span class="dropdown">˅</span></a>
                 <a href="#company">Company <span class="dropdown">˅</span></a>
+                <div class="header-actions">
+                    <a class="btn btn-primary">Get Your Free Account</a>
+                    <a class="btn btn-outline">
+                        <span class="user-icon"></span> Login
+                    </a>
+                </div>
             </nav>
-
-            <div class="header-actions">
-                <a class="btn btn-primary">Get Your Free Account</a>
-                <a class="btn btn-outline">
-                    <span class="user-icon"></span> Login
-                </a>
-            </div>
         </div>
     </header>
 
@@ -414,6 +419,28 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.nav');
+        const header = document.querySelector('.header');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav-open');
+            mobileMenuToggle.classList.toggle('active');
+            header.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking on a link or button
+        const navLinks = document.querySelectorAll('.nav a, .nav .header-actions .btn');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-open');
+                mobileMenuToggle.classList.remove('active');
+                header.classList.remove('menu-open');
+            });
+        });
+    </script>
 </body>
 
 </html>
